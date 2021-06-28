@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<form action="regform" method="post" name="regform" onSubmit="return myFunction()">
+			<fieldset>
+			<legend><h1>Registration Form</h1></legend>
+			<table>
+				<tr><th>Name:</th><td><input type="text" name="name" class="txtField">
+				<span id="name" class="required"></span></td></tr>
+				<tr><th>Mobile:</th><td><input type="text" name="mobile" class="txtField">
+				<span id="mobile" class="required"></span></td></tr></td></tr>
+				<tr><th>Gender:</th><th><input type="radio" name="gender" class="txtField">
+ 											<label for="male">MALE</label>
+  										<input type="radio" name="gender">
+  											<label for="female">FEMALE</label>
+  										<input type="radio" name="gender">
+  											<label for="others">OTHERS</label></th></tr>
+				<tr><th>Email:</th><td><input type="text" name="email" class="txtField">
+				<span id="email" class="required"></span></td></tr></td></tr>
+				<tr><th>Password:</th><td><input type="password" name="pwd" class="txtField">
+				<span id="pwd" class="required"></span></td></tr></td></tr>
+				<tr><th><input type="submit" value="Submit" onclick="myFunction()"></th><th><input type="reset" value="cancel"></th></tr>				
+			</table>
+			</fieldset>
+		</form>
+	</fieldset></center>
+<script>
+	function myFunction()
+	{
+		var name,mobile,email,pwd;
+		name=document.regform.name;
+		mobile=document.regform.mobile;
+		email=document.regform.email;
+		pwd=document.regform.pwd;
+		if(!name.value)
+		{
+			name.focus();
+			document.getElementById("name").innerHTML = "(required*)";
+			output = false;
+		}
+		if(!pwd.value)
+		{
+			pwd.focus();
+			document.getElementById("pwd").innerHTML = "(required*)";
+			output = false;
+		}
+		if(!mobile.value)
+		{
+			mobile.focus();
+			document.getElementById("mobile").innerHTML = "(required*)";
+			output = false;
+		}
+		if(!email.value)
+		{
+			email.focus();
+			document.getElementById("email").innerHTML = "(required*)";
+			output = false;
+		}
+		return output;
+	}
+</script>
+</body>
+</html>
